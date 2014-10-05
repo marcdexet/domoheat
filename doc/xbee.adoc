@@ -2,6 +2,10 @@
 
 Dans ce projet, les commandes seront passés via des modules xbee
 
+L'objectof est d'utiliser un module xbee en _actuateur_ pour piloter l'optocoupleur qui sera relier au circuit de puissance.
+
+Un module Xbeee travaille en 3,3 Volts, donc il faut trouver un _optocoupleur_ qui accepte en commande du 3,3 V et accepte du 220 V de l'autre.
+
 
 == Références, pointeurs
 
