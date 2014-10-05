@@ -1,0 +1,34 @@
+== Xbee
+
+Dans ce projet, les commandes seront passés via des modules xbee
+
+
+== Références, pointeurs
+
+``
+Base 
+ATMY 0
+ATDL 1
+
+Remote
+ATMY1
+ATDL0
+
+Then you'll need to set pin 5 on the base XBee as a digital input: 
+ATD5 3
+
+Pin 5 on the remote will need to be set to the kind of output (default HIGH or default LOW) you need for the switch circuitry on you remote:
+ATD5 4·· (LOW)
+or
+ATD5 5· (HIGH)
+
+On the base station you'll need to set the sample rate and the number of samples before transmission. If it's just a switch, these can be fairly low. In the example I linked to, these are
+ATIR 14 –> sample rate 20 milliseconds (hex 14)·· <--- For your project, this could be MUCH higher. Checking once per second would probably be fine, right? 
+ATIT 5 –> samples before transmit 5··················<--- But if you turn down the sample rate, you might want to transmit more often. You can mess with these until the lag is okay. Checking and transmitting less often will improve battery life. 
+
+You won't need to mess with ATIU, which controls whether or not the line-passing data are also sent through the UART. It defaults to ON, which is fine for testing, and won't make any difference when you're just using it as a switch. It doesn't sound like you even have anything connected to the remote's UART. 
+
+You will need to set the remote to "bind" it's pin states to those of the base station, using ATIA: 
+
+ATIA 0·· <--- in the example I linked to it's 1 because that's the MY address of the base station. Here I used 0 because that's what I put as the base station's MY here. You just need to make sure that the remote is bound to the base, whatever its MY is. 
+''
