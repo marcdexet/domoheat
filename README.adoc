@@ -1,0 +1,12 @@
+= domoheat
+
+Projet de gestion des radiateurs électriques par fil pilote.
+
+Concepts/idées/matériels de base
+
+* arduino
+* xbee
+* diode 1N4007
+* optocoupleurs
+* 
+**A SUIVRE**
