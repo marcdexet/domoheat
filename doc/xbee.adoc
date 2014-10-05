@@ -5,7 +5,12 @@ Dans ce projet, les commandes seront passés via des modules xbee
 
 == Références, pointeurs
 
-``
+=== Comment mettre un pin en état HAUT ou BAS à distance
+
+http://forums.parallax.com/showthread.php/119770-Setting-Xbee-Pro-pins-remotely
+
+[quote]
+----
 Base 
 ATMY 0
 ATDL 1
@@ -31,4 +36,4 @@ You won't need to mess with ATIU, which controls whether or not the line-passing
 You will need to set the remote to "bind" it's pin states to those of the base station, using ATIA: 
 
 ATIA 0·· <--- in the example I linked to it's 1 because that's the MY address of the base station. Here I used 0 because that's what I put as the base station's MY here. You just need to make sure that the remote is bound to the base, whatever its MY is. 
-''
+----
